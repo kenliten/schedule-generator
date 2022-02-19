@@ -1,0 +1,5 @@
+<h2>Teachers</h2>
+<ul *ngFor="let teacher of teachers; let i = index">
+    <li>{{teacher.name}} <button (click)="deleteTeacher(i)">Delete</button></li>
+</ul>
+<app-teacher-form (create)="onInsert()"></app-teacher-form>

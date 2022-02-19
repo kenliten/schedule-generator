@@ -1,0 +1,19 @@
+<form [formGroup]="teacherForm" (ngSubmit)="onSave()">
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" minlength="4" required formControlName="name">
+    </div>
+    <div>
+        <label for="grade">
+            Grade
+        </label>
+        <select id="grade" formControlName="grade" *ngFor="let grade of grades; let i = index">
+            <option value="{{i}}">{{grade.label}}</option>
+        </select>
+    </div>
+    <div>
+        <button class="button" type="submit">Save</button>
+    </div>
+</form>
